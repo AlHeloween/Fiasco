@@ -124,8 +124,21 @@ add_executable(dwfa
 )
 target_link_libraries(dwfa fiasco_static)
 
+# Tree WFA visualization tool (twfa) - outputs XFIG format
+add_executable(twfa
+    ${FIASCO_ROOT}/bin/twfa.c
+    ${FIASCO_ROOT}/bin/params.c
+    ${FIASCO_ROOT}/bin/getopt.c
+    ${FIASCO_ROOT}/bin/getopt1.c
+    ${FIASCO_ROOT}/bin/binerror.c
+    ${FIASCO_ROOT}/bin/fig.c
+    ${FIASCO_ROOT}/bin/lctree.c
+    ${FIASCO_ROOT}/bin/tlist.c
+)
+target_link_libraries(twfa fiasco_static)
+
 # Install targets
-install(TARGETS fiasco_static fiasco_shared cwfa dwfa
+install(TARGETS fiasco_static fiasco_shared cwfa dwfa twfa
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib

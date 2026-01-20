@@ -22,31 +22,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{828F2F06-72AB-3AA4-B6FF-BC84ADE2DAF3}</ProjectGuid>
+    <ProjectGuid>{DAE00D98-F8DF-3287-838E-D37D4128D184}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
-    <ProjectName>fiasco_static</ProjectName>
+    <ProjectName>twfa</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
@@ -60,21 +60,29 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\zPython\ai_fractal\Fiasco\msvc\build\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">fiasco_static.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">fiasco</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">twfa.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">twfa</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\zPython\ai_fractal\Fiasco\msvc\build\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">fiasco_static.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">fiasco</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">twfa.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">twfa</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\zPython\ai_fractal\Fiasco\msvc\build\MinSizeRel\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">fiasco_static.dir\MinSizeRel\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">fiasco</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">twfa.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">twfa</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\zPython\ai_fractal\Fiasco\msvc\build\RelWithDebInfo\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">fiasco_static.dir\RelWithDebInfo\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">fiasco</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">twfa.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">twfa</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -99,12 +107,12 @@
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\zPython\ai_fractal\Fiasco\msvc;D:\zPython\ai_fractal\Fiasco\msvc\..;D:\zPython\ai_fractal\Fiasco\msvc\..\lib;D:\zPython\ai_fractal\Fiasco\msvc\..\codec;D:\zPython\ai_fractal\Fiasco\msvc\..\input;D:\zPython\ai_fractal\Fiasco\msvc\..\output;D:\zPython\ai_fractal\Fiasco\msvc\..\bin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -115,9 +123,23 @@
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <Lib>
+    <Link>
+      <AdditionalDependencies>Debug\fiasco.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-    </Lib>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/zPython/ai_fractal/Fiasco/msvc/build/Debug/twfa.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/zPython/ai_fractal/Fiasco/msvc/build/Debug/twfa.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -141,14 +163,14 @@
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\zPython\ai_fractal\Fiasco\msvc;D:\zPython\ai_fractal\Fiasco\msvc\..;D:\zPython\ai_fractal\Fiasco\msvc\..\lib;D:\zPython\ai_fractal\Fiasco\msvc\..\codec;D:\zPython\ai_fractal\Fiasco\msvc\..\input;D:\zPython\ai_fractal\Fiasco\msvc\..\output;D:\zPython\ai_fractal\Fiasco\msvc\..\bin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -159,9 +181,23 @@
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <Lib>
+    <Link>
+      <AdditionalDependencies>Release\fiasco.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-    </Lib>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/zPython/ai_fractal/Fiasco/msvc/build/Release/twfa.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/zPython/ai_fractal/Fiasco/msvc/build/Release/twfa.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
@@ -185,14 +221,14 @@
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\zPython\ai_fractal\Fiasco\msvc;D:\zPython\ai_fractal\Fiasco\msvc\..;D:\zPython\ai_fractal\Fiasco\msvc\..\lib;D:\zPython\ai_fractal\Fiasco\msvc\..\codec;D:\zPython\ai_fractal\Fiasco\msvc\..\input;D:\zPython\ai_fractal\Fiasco\msvc\..\output;D:\zPython\ai_fractal\Fiasco\msvc\..\bin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -203,9 +239,23 @@
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <Lib>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\fiasco.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-    </Lib>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/zPython/ai_fractal/Fiasco/msvc/build/MinSizeRel/twfa.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/zPython/ai_fractal/Fiasco/msvc/build/MinSizeRel/twfa.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
@@ -230,12 +280,12 @@
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FIASCO_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\zPython\ai_fractal\Fiasco\msvc;D:\zPython\ai_fractal\Fiasco\msvc\..;D:\zPython\ai_fractal\Fiasco\msvc\..\lib;D:\zPython\ai_fractal\Fiasco\msvc\..\codec;D:\zPython\ai_fractal\Fiasco\msvc\..\input;D:\zPython\ai_fractal\Fiasco\msvc\..\output;D:\zPython\ai_fractal\Fiasco\msvc\..\bin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -246,9 +296,23 @@
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <Lib>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\fiasco.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
-    </Lib>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/zPython/ai_fractal/Fiasco/msvc/build/RelWithDebInfo/twfa.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/zPython/ai_fractal/Fiasco/msvc/build/RelWithDebInfo/twfa.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="D:\zPython\ai_fractal\Fiasco\msvc\CMakeLists.txt">
@@ -308,63 +372,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\arith.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\bit-io.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\dither.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\error.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\image.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\list.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\misc.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\rpf.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\approx.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\bintree.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\coder.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\coeff.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\control.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\decoder.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\dfiasco.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\domain-pool.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\ip.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\motion.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\mwfa.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\options.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\prediction.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\subdivide.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\tiling.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\wfalib.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\basis.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\matrices.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/input/matrices.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\mc.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/input/mc.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\nd.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/input/nd.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\read.c" />
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\tree.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/input/tree.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\weights.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/input/weights.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\matrices.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/output/matrices.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\mc.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/output/mc.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\nd.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/output/nd.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\tree.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/output/tree.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\weights.c">
-      <ObjectFileName>$(IntDir)/D_/zPython/ai_fractal/Fiasco/output/weights.c.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\write.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\twfa.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\params.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\getopt.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\getopt1.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\binerror.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\fig.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\lctree.c" />
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\tlist.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -373,6 +388,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\zPython\ai_fractal\Fiasco\msvc\build\fiasco_static.vcxproj">
+      <Project>{828F2F06-72AB-3AA4-B6FF-BC84ADE2DAF3}</Project>
+      <Name>fiasco_static</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

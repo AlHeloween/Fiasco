@@ -13,6 +13,7 @@
 		<BuildDependency Project="dwfa.vcxproj"/>
 		<BuildDependency Project="fiasco_shared.vcxproj"/>
 		<BuildDependency Project="fiasco_static.vcxproj"/>
+		<BuildDependency Project="twfa.vcxproj"/>
 	</Project>
 	<Project Path="INSTALL.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="d34fb1e5-0322-338c-8ad9-8e446a0ffcad">
 		<BuildDependency Project="ALL_BUILD.vcxproj"/>
@@ -36,5 +37,9 @@
 	</Project>
 	<Project Path="fiasco_static.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="828f2f06-72ab-3aa4-b6ff-bc84ade2daf3">
 		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="twfa.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="dae00d98-f8df-3287-838e-d37d4128d184">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="fiasco_static.vcxproj"/>
 	</Project>
 </Solution>

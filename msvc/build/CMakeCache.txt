@@ -338,6 +338,8 @@ _Python3_INCLUDE_DIR:INTERNAL=D:/USESoft/Python39/Include
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;23;64;<none>;cp39-win_amd64;;D:\USESoft\Python39\Lib;D:\USESoft\Python39\Lib;D:\USESoft\Python39\Lib\site-packages;D:\USESoft\Python39\Lib\site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=3d496dfb21361d4cf62d68112e0ef2b7
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //Path to a library.
 _Python3_LIBRARY_DEBUG:INTERNAL=_Python3_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
