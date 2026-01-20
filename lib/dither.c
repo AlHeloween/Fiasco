@@ -742,7 +742,7 @@ display_24_bit_bgr (const struct fiasco_renderer *this, unsigned char *ximage,
 	 if (private->double_resolution)
 	 {
 	    int		  yval1;	/* lumincance pixel */
-	    int 	  crval1, cbval1; /* chroma pixels */
+	    int 	  crval1, cbval1, crval2, cbval2; /* chroma pixels */
 	    int		  yval2;	/* pixel in YCbCr color space */
 	    unsigned int  R1, G1, B1;	/* pixel in RGB color space */
 	    unsigned int  R2, G2, B2;	/* pixel in RGB color space */
@@ -818,7 +818,7 @@ display_24_bit_bgr (const struct fiasco_renderer *this, unsigned char *ximage,
 	 else
 	 {
 	    int		  yval1;	/* lumincance pixel */
-	    int 	  crval1, cbval1; /* chroma pixels */
+	    int 	  crval1, cbval1, crval2, cbval2; /* chroma pixels */
 	    int		  yval2;	/* pixel in YCbCr color space */
 	    unsigned int  R1, G1, B1;	/* pixel in RGB color space */
 	    unsigned int  R2, G2, B2;	/* pixel in RGB color space */
@@ -1193,7 +1193,7 @@ display_24_bit_rgb (const struct fiasco_renderer *this, unsigned char *ximage,
 	 if (private->double_resolution)
 	 {
 	    int		  yval1;	/* lumincance pixel */
-	    int 	  crval1, cbval1; /* chroma pixels */
+	    int 	  crval1, cbval1, crval2, cbval2; /* chroma pixels */
 	    int		  yval2;	/* pixel in YCbCr color space */
 	    unsigned int  R1, G1, B1;	/* pixel in RGB color space */
 	    unsigned int  R2, G2, B2;	/* pixel in RGB color space */
@@ -1269,7 +1269,7 @@ display_24_bit_rgb (const struct fiasco_renderer *this, unsigned char *ximage,
 	 else
 	 {
 	    int		  yval1;	/* lumincance pixel */
-	    int 	  crval1, cbval1; /* chroma pixels */
+	    int 	  crval1, cbval1, crval2, cbval2; /* chroma pixels */
 	    int		  yval2;	/* pixel in YCbCr color space */
 	    unsigned int  R1, G1, B1;	/* pixel in RGB color space */
 	    unsigned int  R2, G2, B2;	/* pixel in RGB color space */

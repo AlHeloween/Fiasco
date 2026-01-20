@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\zPython\ai_fractal\Fiasco\msvc\build\CMakeFiles\97770ef84476aa85f444aac140a67b36\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{04B0DC16-6E1F-3329-93F8-F828083EF2A8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

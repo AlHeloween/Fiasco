@@ -1,0 +1,7 @@
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/fiasco_static.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/fiasco_shared.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/cwfa.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/dwfa.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/INSTALL.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/ALL_BUILD.dir
+D:/zPython/ai_fractal/Fiasco/msvc/build/CMakeFiles/ZERO_CHECK.dir

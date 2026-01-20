@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\arith.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\bit-io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\dither.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\lib\rpf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\approx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\bintree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\coder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\coeff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\control.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\decoder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\dfiasco.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\domain-pool.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\ip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\motion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\mwfa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\options.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\prediction.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\subdivide.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\tiling.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\codec\wfalib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\basis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\matrices.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\mc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\nd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\input\weights.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\matrices.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\mc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\nd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\weights.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\output\write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\zPython\ai_fractal\Fiasco\msvc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F19CD5D0-19FA-31E8-9CE9-9C9FDCB3356F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

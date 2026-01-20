@@ -55,8 +55,10 @@ init_clipping (void);
 real_t
 variance (const word_t *pixels, unsigned x0, unsigned y0,
 	  unsigned width, unsigned height, unsigned cols);
+#ifndef HAVE_LOG2
 double
 log2 (double x);
+#endif
 #ifndef HAVE_STRDUP
 char *
 strdup (const char *s);

@@ -1,0 +1,10 @@
+^D:\ZPYTHON\AI_FRACTAL\FIASCO\MSVC\BUILD\CMAKEFILES\97770EF84476AA85F444AAC140A67B36\GENERATE.STAMP.RULE
+setlocal
+C:\PROGRA~1\CMake\bin\cmake.exe -SD:/zPython/ai_fractal/Fiasco/msvc -BD:/zPython/ai_fractal/Fiasco/msvc/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/zPython/ai_fractal/Fiasco/msvc/build/fiasco.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

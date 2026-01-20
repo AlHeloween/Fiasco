@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\dwfa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\params.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\getopt1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zPython\ai_fractal\Fiasco\bin\binerror.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\zPython\ai_fractal\Fiasco\msvc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F19CD5D0-19FA-31E8-9CE9-9C9FDCB3356F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
