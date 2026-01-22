@@ -28,6 +28,17 @@
 
 #include "tree.h"
 
+/* Enable checkpoint logging for tree reading (ground truth) */
+#define ORIG_TREE_CHECKPOINTS_ENABLED 1
+
+#ifdef ORIG_TREE_CHECKPOINTS_ENABLED
+#define CP_READ_TREE_ORIG(state, label, child, level, x, y) \
+    fprintf(stderr, "[ORIG CP_READ_TREE] state=%u label=%u child=%d level=%u x=%u y=%u\n", \
+            (state), (label), (int)(child), (level), (x), (y))
+#else
+#define CP_READ_TREE_ORIG(state, label, child, level, x, y) ((void)0)
+#endif
+
 /*****************************************************************************
 
 				prototypes
@@ -193,6 +204,10 @@ restore_depth_first_order (unsigned src_state, unsigned level, unsigned x,
 	 wfa->tree [*dst_state][label] = child [label];
 	 wfa->x [*dst_state][label]    = newx [label];
 	 wfa->y [*dst_state][label]    = newy [label];
+	 
+	 /* CHECKPOINT: Tree node */
+	 CP_READ_TREE_ORIG(*dst_state, label, child[label], level, 
+	                   newx[label], newy[label]);
       }
       wfa->level_of_state [*dst_state] = level;
    }

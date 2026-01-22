@@ -27,6 +27,17 @@
 
 #include "weights.h"
 
+/* Enable checkpoint logging for weight reading (ground truth) */
+#define ORIG_WEIGHT_CHECKPOINTS_ENABLED 1
+
+#ifdef ORIG_WEIGHT_CHECKPOINTS_ENABLED
+#define CP_READ_WEIGHT_ORIG(state, label, edge, domain, weight) \
+    fprintf(stderr, "[ORIG CP_READ_WEIGHT] state=%u label=%u edge=%u domain=%d weight=%.6f\n", \
+            (state), (label), (edge), (int)(domain), (weight))
+#else
+#define CP_READ_WEIGHT_ORIG(state, label, edge, domain, weight) ((void)0)
+#endif
+
 /*****************************************************************************
 
 				public code
@@ -172,26 +183,29 @@ read_weights (unsigned total, wfa_t *wfa, bitfile_t *input)
 	       for (edge = 0; isedge (domain = wfa->into[state][label][edge]);
 		    edge++)
 	       {
+		  real_t weight_val;
+		  
 		  if (domain)		/* not DC component */
 		  {
 		     if (delta_approx && wfa->delta_state [state])
-			wfa->weight [state][label][edge]
-			   = btor (*wptr++, wfa->wfainfo->d_rpf);
+			weight_val = btor (*wptr++, wfa->wfainfo->d_rpf);
 		     else
-			wfa->weight [state][label][edge]
-			   = btor (*wptr++, wfa->wfainfo->rpf);
+			weight_val = btor (*wptr++, wfa->wfainfo->rpf);
 		  }
 		  else
 		  {
 		     if (delta_approx && wfa->delta_state [state])
-			wfa->weight [state][label][edge]
-			   = btor (*wptr++, wfa->wfainfo->d_dc_rpf);
+			weight_val = btor (*wptr++, wfa->wfainfo->d_dc_rpf);
 		     else
-			wfa->weight [state][label][edge]
-			   = btor (*wptr++, wfa->wfainfo->dc_rpf);
+			weight_val = btor (*wptr++, wfa->wfainfo->dc_rpf);
 		  }
+		  
+		  wfa->weight [state][label][edge] = weight_val;
 		  wfa->int_weight [state][label][edge]
-		     = wfa->weight [state][label][edge] * 512 + 0.5;
+		     = weight_val * 512 + 0.5;
+		  
+		  /* CHECKPOINT: Weight read */
+		  CP_READ_WEIGHT_ORIG(state, label, edge, domain, weight_val);
 	       }
    }
    

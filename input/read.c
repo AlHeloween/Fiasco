@@ -20,6 +20,33 @@
 
 #include <string.h>
 
+/* Enable checkpoint logging for WFA reading (ground truth) */
+#define ORIG_WFA_READ_CHECKPOINTS_ENABLED 1
+
+#ifdef ORIG_WFA_READ_CHECKPOINTS_ENABLED
+#define CP_READ_HEADER_ORIG(release, max_states, width, height, color) \
+    fprintf(stderr, "[ORIG CP_READ_HEADER] release=%u max_states=%u width=%u height=%u color=%d\n", \
+            (release), (max_states), (width), (height), (int)(color))
+#define CP_READ_FRAME_ORIG(frame_num, states, frame_type) \
+    fprintf(stderr, "[ORIG CP_READ_FRAME] frame=%u states=%u type=%u\n", \
+            (frame_num), (states), (unsigned)(frame_type))
+#define CP_READ_TILING_ORIG(exponent, has_vorder) \
+    fprintf(stderr, "[ORIG CP_READ_TILING] exponent=%u has_vorder=%d\n", \
+            (exponent), (int)(has_vorder))
+#define CP_READ_TREE_ORIG(state, label, child, level, x, y) \
+    fprintf(stderr, "[ORIG CP_READ_TREE] state=%u label=%u child=%d level=%u x=%u y=%u\n", \
+            (state), (label), (int)(child), (level), (x), (y))
+#define CP_READ_WEIGHT_ORIG(state, label, edge, domain, weight) \
+    fprintf(stderr, "[ORIG CP_READ_WEIGHT] state=%u label=%u edge=%u domain=%d weight=%.6f\n", \
+            (state), (label), (edge), (int)(domain), (weight))
+#else
+#define CP_READ_HEADER_ORIG(release, max_states, width, height, color) ((void)0)
+#define CP_READ_FRAME_ORIG(frame_num, states, frame_type) ((void)0)
+#define CP_READ_TILING_ORIG(exponent, has_vorder) ((void)0)
+#define CP_READ_TREE_ORIG(state, label, child, level, x, y) ((void)0)
+#define CP_READ_WEIGHT_ORIG(state, label, edge, domain, weight) ((void)0)
+#endif
+
 #include "types.h"
 #include "macros.h"
 #include "error.h"
@@ -154,6 +181,9 @@ open_wfa (const char *filename, wfa_info_t *wi)
       
 	 wi->level = max (lx, ly) * 2 - ((ly == lx + 1) ? 1 : 0);
       }
+      
+      /* CHECKPOINT: Header read */
+      CP_READ_HEADER_ORIG(wi->release, wi->max_states, wi->width, wi->height, wi->color);
       wi->chroma_max_states = wi->color ? read_rice_code (rice_k, input) : -1;
       wi->p_min_level       = read_rice_code (rice_k, input);
       wi->p_max_level       = read_rice_code (rice_k, input);
@@ -370,6 +400,9 @@ read_next_wfa (wfa_t *wfa, bitfile_t *input)
       wfa->states     = read_rice_code (rice_k, input);
       wfa->frame_type = read_rice_code (rice_k, input);
       frame_number    = read_rice_code (rice_k, input);
+      
+      /* CHECKPOINT: Frame header read */
+      CP_READ_FRAME_ORIG(frame_number, wfa->states, wfa->frame_type);
    }
 
    if (wfa->wfainfo->release > 1)	/* no alignment in version 1 */
@@ -380,11 +413,17 @@ read_next_wfa (wfa_t *wfa, bitfile_t *input)
    /*
     *  Read image tiling info 
     */
-   if (get_bit (input))			/* tiling performed ? */
-      read_tiling (&tiling, wfa->wfainfo->width, wfa->wfainfo->height,
-		   wfa->wfainfo->level, input);
-   else
-      tiling.exponent = 0;
+   {
+      bool_t has_tiling = get_bit (input);
+      if (has_tiling) {			/* tiling performed ? */
+	 read_tiling (&tiling, wfa->wfainfo->width, wfa->wfainfo->height,
+		      wfa->wfainfo->level, input);
+	 CP_READ_TILING_ORIG(tiling.exponent, (tiling.vorder != NULL));
+      } else {
+	 tiling.exponent = 0;
+	 CP_READ_TILING_ORIG(0, 0);
+      }
+   }
    
    INPUT_BYTE_ALIGN (input);
 
@@ -470,7 +509,12 @@ read_tiling (tiling_t *tiling, unsigned image_width, unsigned image_height,
    
    tiling->exponent = read_rice_code (rice_k, input);
    
-   if (get_bit (input))			/* variance order */
+   {
+      bool_t has_vorder = get_bit (input);	/* variance order */
+      
+      CP_READ_TILING_ORIG(tiling->exponent, has_vorder);
+      
+      if (has_vorder)
    {
       unsigned tile;			/* current image tile */
       unsigned x0, y0;			/* NW corner of image tile */
