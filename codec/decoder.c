@@ -1128,8 +1128,15 @@ compute_state_images (unsigned max_level, word_t **simg,
     */
 
    for (state = 1; state < wfa->states; state++)
-      if (simg [state] != NULL)		/* compute image at level 0 */
-	 *simg [state] = (int) (wfa->final_distribution[state] * 8 + .5) * 2;
+      if (simg [state] != NULL) {		/* compute image at level 0 */
+	 int scaled = (int) (wfa->final_distribution[state] * 8 + .5) * 2;
+	 *simg [state] = scaled;
+	 /* CHECKPOINT CP0: Level 0 initialization */
+	 if (state <= 10 || state == wfa->root_state) {
+	    printf ("[ORIG CP0] Level0 state=%u final_dist=%.6f scaled=%d\n",
+		    state, wfa->final_distribution[state], scaled);
+	 }
+      }
 
    /*
     *  Compute images of states
@@ -1148,6 +1155,11 @@ compute_state_images (unsigned max_level, word_t **simg,
       unsigned width  = width_of_level (level - 1);
       unsigned height = height_of_level (level - 1);
       
+      /* CHECKPOINT CP1: Level start */
+      if (level <= 5) {
+	 printf ("[ORIG CP1] Level=%u width=%u height=%u\n", level, width, height);
+      }
+      
       for (state = 1; state < wfa->states; state++)
 	 if (simg [state + level * wfa->states] != NULL)
 	    for (label = 0; label < MAXLABELS; label++)
@@ -1157,21 +1169,40 @@ compute_state_images (unsigned max_level, word_t **simg,
 		  int       domain;
 		  word_t   *range;	/* address of current range */
 		  bool_t    prediction_used; /* ND prediction found ? */
+		  unsigned  range_offset; /* Offset for checkpoint logging */
+
+		  /* CHECKPOINT CP2: State/label start */
+		  if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+		     printf ("[ORIG CP2] State=%u Label=%u Level=%u\n",
+			     state, label, level);
+		  }
 
 		  /*
 		   *  Compute address of range image
 		   */
 		  if (level & 1)	/* split vertically */
 		  {
-		     range = simg [state + level * wfa->states]
-			     + label * (height_of_level (level - 1)
-					* offset [state
-						 + level * wfa->states]);
+		     range_offset = label * (height_of_level (level - 1)
+					     * offset [state
+						      + level * wfa->states]);
+		     range = simg [state + level * wfa->states] + range_offset;
+		     /* CHECKPOINT CP3: Range address (vertical split) */
+		     if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+			printf ("[ORIG CP3] Split=VERT State=%u Label=%u Level=%u RangeOffset=%u Stride=%u\n",
+				state, label, level, range_offset,
+				offset [state + level * wfa->states]);
+		     }
 		  }
 		  else			/* split horizontally */
 		  {
-		     range = simg [state + level * wfa->states]
-			     + label * width_of_level (level - 1);
+		     range_offset = label * width_of_level (level - 1);
+		     range = simg [state + level * wfa->states] + range_offset;
+		     /* CHECKPOINT CP3: Range address (horizontal split) */
+		     if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+			printf ("[ORIG CP3] Split=HORZ State=%u Label=%u Level=%u RangeOffset=%u Stride=%u\n",
+				state, label, level, range_offset,
+				offset [state + level * wfa->states]);
+		     }
 		  }
 
 		  /*
@@ -1198,6 +1229,13 @@ compute_state_images (unsigned max_level, word_t **simg,
 		     src_offset = offset [domain + (level - 1) * wfa->states] ;
 		     dst        = range;
 		     dst_offset	= offset [state + level * wfa->states];
+		     
+		     /* CHECKPOINT CP4: Child copy */
+		     if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+			printf ("[ORIG CP4] State=%u Label=%u Level=%u Child=%d ChildSize=%ux%u\n",
+				state, label, level, domain, width, height);
+		     }
+		     
 		     for (y = height; y; y--)
 		     {
 			memcpy (dst, src, width * sizeof (word_t));
@@ -1225,6 +1263,13 @@ compute_state_images (unsigned max_level, word_t **simg,
 			src_offset = offset [domain + ((level - 1)
 						       * wfa->states)] - width;
 			weight     = wfa->int_weight [state][label][edge];
+			
+			/* CHECKPOINT CP5: Domain weight (first edge, no prediction) */
+			if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+			   float float_weight = ((float)weight / 1024.0f) * 2.0f;
+			   printf ("[ORIG CP5] State=%u Label=%u Level=%u Edge=%u Domain=%d IntWeight=%d FloatWeight=%.6f\n",
+				   state, label, level, edge, domain, weight, float_weight);
+			}
 			
 			if (width == 1)	/* can't add two-pixels in a row */
 			{
@@ -1367,6 +1412,13 @@ compute_state_images (unsigned max_level, word_t **simg,
 			src_offset = offset [domain + ((level - 1)
 						       * wfa->states)] - width;
 			weight     = wfa->int_weight [state][label][edge];
+			
+			/* CHECKPOINT CP5: Domain weight (remaining edges) */
+			if ((level <= 3 && state <= 10) || state == wfa->root_state) {
+			   float float_weight = ((float)weight / 1024.0f) * 2.0f;
+			   printf ("[ORIG CP5] State=%u Label=%u Level=%u Edge=%u Domain=%d IntWeight=%d FloatWeight=%.6f\n",
+				   state, label, level, edge, domain, weight, float_weight);
+			}
 			
 			if (width == 1)	/* can't add two-pixels in a row */
 			{
